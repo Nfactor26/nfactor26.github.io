@@ -11,7 +11,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
@@ -22,15 +22,15 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
-          path: /tmp/hugo_cache
+          path: /home/runner/.cache/hugo_cache
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-hugomod-
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 'latest'
           cache: 'npm'
