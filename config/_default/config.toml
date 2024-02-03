@@ -1,0 +1,8 @@
+baseURL = "https://nfactor26.github.io"
+title = "Nish26"
+languageCode = "en-us"
+paginate = 5
+defaultContentLanguage = "en"
+
+
+
